@@ -6,4 +6,29 @@ import { Component, ViewEncapsulation } from '@angular/core';
     styleUrls: ['./app.component.css'],
     encapsulation: ViewEncapsulation.None
 })
-    export class AppComponent {}
+    export class AppComponent {
+
+        loggedIn: boolean = false;
+
+        logIn(evt) {
+            console.log(evt);
+            this.loggedIn = evt;
+            this.user.registered = !this.user.registered;
+        }
+        user = {
+            id:1,
+            name:'Kevin',
+            gender:'M',
+            ageGroup:'51+',
+            userCode:'M51+',
+            reqs:{},
+            reqsStatus: {
+                fruitMet: false,
+                vegMet: false,
+                proteinMet: false,
+                grainMet:false
+            }, 
+            registered: false,
+            email:'kevin@kevinruse.com'
+        };
+    }
