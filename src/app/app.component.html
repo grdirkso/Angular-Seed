@@ -1,6 +1,7 @@
 <div id="wrapper" [ngSwitch]="loggedIn">  
   <app-header [user]="user"></app-header>
-  <p>This text is <span [ngStyle]="setImportance()">very</span> important!</p>
+  <app-login></app-login>
+  <!-- <p>This text is <span [ngStyle]="setImportance()">very</span> important!</p>
   <input 
   type="radio" 
   name="preference" 
@@ -15,8 +16,8 @@
   id="importantCaps" 
   style="transform:scale(1.5)" 
   (click)="setStylePreference('caps')"
-  >
-  <label for="importantCaps">Caps</label>
+  > -->
+  <!-- <label for="importantCaps">Caps</label> -->
   <!-- <section *ngIf="!user.registered">
     <img src="../assets/images/chooseMyPlate.gov.png" alt="">
   </section>
@@ -32,5 +33,5 @@
     </span>
     <span *ngSwitchDefault>Default Text Goes Here</span>
   </p> -->
-  <app-child (login)="logIn($event)"></app-child>
+  <!-- <app-child (login)="logIn($event)"></app-child> -->
 </div>
