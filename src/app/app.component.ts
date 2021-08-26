@@ -9,12 +9,30 @@ import { Component, ViewEncapsulation } from '@angular/core';
     export class AppComponent {
 
         loggedIn: boolean = false;
+        stylePreference: string;
 
         logIn(evt) {
             console.log(evt);
             this.loggedIn = evt;
             this.user.registered = !this.user.registered;
         }
+
+        setStylePreference(value) {
+            this.stylePreference = value;
+        }
+
+        setImportance() {
+            if(this.stylePreference === 'hilite') {
+                return {
+                    'background-color': 'yellow'
+                };
+            } else if (this.stylePreference === 'caps') {
+                return {
+                    'text-transform': 'uppercase'
+                };
+            }
+        }
+        
         user = {
             id:1,
             name:'Kevin',
