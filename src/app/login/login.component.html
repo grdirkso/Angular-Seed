@@ -1,4 +1,4 @@
-<form #userNameForm="ngForm" (ngSubmit)="onSubmit(userNameForm.value)">
+<!-- <form #userNameForm="ngForm" (ngSubmit)="onSubmit(userNameForm.value)">
     <label for="userName">User Name</label>
     <input 
         type="text"
@@ -6,7 +6,18 @@
         name="userName" 
         [(ngModel)]="userName"
     >
-    <button type="submit">Submit</button>
-    <button (click)="log(userNameForm)">Access Form Properties with ngForm</button>
+    <button type="submit">Submit Template-Driven Form</button>
+    <button (click)="log(userNameForm)">Log Template Form Properties with ngForm</button>
+</form> -->
+<form [formGroup]="userNameForm" (ngSubmit)="onSubmit(userNameForm.value)">
+    <label for="userName">User Name</label>
+    <input 
+        type="text"
+        id="userName"
+        name="userName" 
+        formControlName="userName"
+    >
+    <button type="submit">Submit Recative Form</button>
+    <button (click)="log(userNameForm)">Log Recative Form Properties with ngForm</button>
 </form>
-<h1>Hi {{ userName }}</h1>
+<h1>Hi {{ userName.value }}</h1>
